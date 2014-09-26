@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20140924101204) do
   create_table "books", force: true do |t|
     t.integer  "author_id"
     t.string   "title"
-    t.integer  "ISBN",           limit: 8
+    t.string   "ISBN"
     t.integer  "publisher_id"
     t.integer  "published_year"
     t.datetime "created_at"

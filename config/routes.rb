@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :authors, :books, :publishers
   end
 
-  root '/api/authors#index'
+  root 'api/authors#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

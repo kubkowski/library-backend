@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   namespace :api do
     resources :authors, :books, :publishers
   end
+
+  root '/api/authors#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

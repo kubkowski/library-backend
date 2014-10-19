@@ -2,28 +2,7 @@ module Api
   class BaseController < ApplicationController
     protect_from_forgery with: :null_session
     before_action :set_resource, only: [:destroy, :show, :update]
-    before_action :cors_preflight_check
-    after_action :cors_set_access_control_headers
     respond_to :json
-
-    #Checking headers
-    def cors_preflight_check
-      if request.method == "OPTIONS"
-        headers['Access-Control-Allow-Origin'] = 'http://localhost'
-        headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
-        headers['Access-Control-Allow-Headers'] = %w{Origin Accept Content-Type X-Requested-With auth_token X-CSRF-Token}.join(',')
-        headers['Access-Control-Max-Age'] = '1728000'
-        render :text => '', :content_type => 'text/plain'
-      end
-    end
-
-    #Setting headers for response
-    def cors_set_access_control_headers
-      headers['Access-Control-Allow-Origin'] = '*'
-      headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
-      headers['Access-Control-Allow-Headers'] = %w{Origin Accept Content-Type X-Requested-With auth_token X-CSRF-Token}.join(',')
-      headers['Access-Control-Max-Age'] = "1728000"
-    end    
 
     # POST /api/{plural_resource_name}
     def create

@@ -7,7 +7,7 @@ module Api
 
     #Setting headers for response
     def set_access_control_headers
-      headers['Access-Control-Allow-Origin'] = "*"
+      headers['Access-Control-Allow-Origin'] = "http://0.0.0.0:8000"
       headers['Access-Control-Request-Method'] = %w{GET POST OPTIONS}.join(",")
     end    
 

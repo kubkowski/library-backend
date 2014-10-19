@@ -2,7 +2,14 @@ module Api
   class BaseController < ApplicationController
     protect_from_forgery with: :null_session
     before_action :set_resource, only: [:destroy, :show, :update]
+    after_action :set_access_control_headers
     respond_to :json
+
+    #Setting headers for response
+    def set_access_control_headers
+      headers['Access-Control-Allow-Origin'] = "*"
+      headers['Access-Control-Request-Method'] = %w{GET POST OPTIONS}.join(",")
+    end    
 
     # POST /api/{plural_resource_name}
     def create

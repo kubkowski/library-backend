@@ -1,3 +1,4 @@
 class Book < ActiveRecord::Base
-	has_one :author
+	belongs_to :author
+	belongs_to :publisher
 end

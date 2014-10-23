@@ -1,1 +1,5 @@
-json.array! @authors, :id, :first_name, :last_name
+json.array! @authors do |author|
+	json.id 				author.id
+	json.firstName 	author.first_name
+	json.lastName 	author.last_name
+end

@@ -1,3 +1,3 @@
 json.id    						@publisher.id
 json.name	 						@publisher.name
-json.establishedYear 	@publisher.established_year
+json.established_year 	@publisher.established_year

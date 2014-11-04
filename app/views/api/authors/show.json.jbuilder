@@ -1,3 +1,3 @@
-json.id 				@author.id
-json.firstName 	@author.first_name
-json.lastName 	@author.last_name
+json.id 					@author.id
+json.first_name 	@author.first_name
+json.last_name 		@author.last_name

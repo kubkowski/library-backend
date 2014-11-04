@@ -1,16 +1,16 @@
 json.array! @books do |book| 
-	json.id 							book.id
+	json.id 									book.id
 	json.author do
-		json.id 						book.author.id
-		json.firstName 			book.author.first_name
-		json.lastName 			book.author.last_name
+		json.id 								book.author.id
+		json.first_name 				book.author.first_name
+		json.last_name 					book.author.last_name
 	end
-	json.title 						book.title
-	json.isbn 						book.ISBN 
+	json.title 								book.title
+	json.ISBN 								book.ISBN 
 	json.publisher do
-	 json.id 							book.publisher.id
-	 json.name 						book.publisher.name
-	 json.establishedYear book.publisher.established_year
+	 json.id 									book.publisher.id
+	 json.name 								book.publisher.name
+	 json.established_year 		book.publisher.established_year
 	end
-	json.publishedYear 		book.published_year
+	json.published_year 			book.published_year
 end

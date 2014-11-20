@@ -4,7 +4,7 @@ module Api
     private
 
     	def book_params
-        params.require(:book).permit(:title, :ISBN, :published_year)
+        params.require(:book).permit(:author_id, :title, :ISBN, :published_year, :publisher_id)
       end
 
       def query_params
